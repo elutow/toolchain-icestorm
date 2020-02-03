@@ -1,5 +1,7 @@
 # -- Compile Icestorm script
 
+set -eux
+
 ICESTORM=icestorm
 COMMIT=0ec00d892a91cc68e45479b46161f649caea2933
 GIT_ICESTORM=https://github.com/cliffordwolf/icestorm.git
@@ -23,6 +25,7 @@ cd $BUILD_DIR/$ICESTORM
 # -- Compile it
 if [ $ARCH == "darwin" ]; then
   gsed -i "s/-ggdb //;" config.mk
+  sed -i "s/-ggdb //;" config.mk
   make -j$J CC="$CC" \
             SUBDIRS="iceprog"
   make -j$J CXX="$CXX" \

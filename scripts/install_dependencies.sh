@@ -80,8 +80,9 @@ if [ $ARCH == "darwin" ]; then
   fi
   DEPS="bison flex gawk libffi git mercurial graphviz \
         pkg-config python3 libusb libftdi gnu-sed wget \
-		tcl-tk xdot cmake boost boost-python3 qt5 eigen"
+        tcl-tk xdot cmake boost boost-python3 qt5 eigen"
   brew install --force $DEPS
+  brew upgrade python
   brew unlink $DEPS && brew link --force $DEPS
 else
   cp $WORK_DIR/build-data/lib/$ARCH/libftdi1.a $WORK_DIR/build-data/lib/$ARCH/libftdi.a
