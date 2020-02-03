@@ -18,8 +18,8 @@ if [ $ARCH == "linux_i686" ]; then
                           gawk tcl-dev:i386 libffi-dev:i386 git mercurial graphviz \
                           xdot pkg-config python3 libboost-all-dev:i386 zlib1g-dev:i386 \
                           libeigen3-dev:i386 gperf autoconf libgmp-dev:i386 cmake qt5-default \
-                          gcc-multilib g++-multilib
-  sudo apt-get install -f
+                          gcc-multilib g++-multilib \
+    || sudo apt-get install -f
   sudo apt-get autoremove -y
   gcc --version
   g++ --version
@@ -31,8 +31,8 @@ if [ $ARCH == "linux_armv7l" ]; then
                           xdot pkg-config python3 libboost-all-dev:armhf zlib1g-dev:armhf \
                           libeigen3-dev:armhf gperf autoconf libgmp-dev:armhf cmake qt5-default \
                           gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf \
-                          binfmt-support qemu-user-static
-  sudo apt-get install -f
+                          binfmt-support qemu-user-static \
+    || sudo apt-get install -f
   sudo apt-get autoremove -y
   arm-linux-gnueabihf-gcc --version
   arm-linux-gnueabihf-g++ --version
@@ -44,8 +44,8 @@ if [ $ARCH == "linux_aarch64" ]; then
                           xdot pkg-config python3 libboost-all-dev:arm64 zlib1g-dev:arm64 \
                           libeigen3-dev:arm64 gperf autoconf libgmp-dev:arm64 cmake qt5-default \
                           gcc-aarch64-linux-gnu g++-aarch64-linux-gnu \
-                          binfmt-support qemu-user-static
-  sudo apt-get install -f
+                          binfmt-support qemu-user-static \
+    || sudo apt-get install -f
   sudo apt-get autoremove -y
   aarch64-linux-gnu-gcc --version
   aarch64-linux-gnu-g++ --version
@@ -56,9 +56,8 @@ if [ $ARCH == "windows_x86" ]; then
                           gawk tcl-dev:i386 libffi-dev:i386 git mercurial graphviz \
                           xdot pkg-config python3 libboost-all-dev:i386 zlib1g-dev \
                           libeigen3-dev:i386 gperf autoconf libgmp-dev:i386 cmake qt5-default \
-                          gcc-mingw-w64 gc++-mingw-w64 wine-development
-                          #mingw-w64 mingw-w64-tools
-  sudo apt-get install -f
+                          gcc-mingw-w64 gc++-mingw-w64 wine-development \
+    || sudo apt-get install -f
   sudo apt-get autoremove -y
   i686-w64-mingw32-gcc --version
   i686-w64-mingw32-g++ --version
@@ -69,9 +68,8 @@ if [ $ARCH == "windows_amd64" ]; then
                           gawk tcl-dev libffi-dev git mercurial graphviz \
                           xdot pkg-config python3 libboost-all-dev zlib1g-dev \
                           libeigen3-dev gperf autoconf libgmp-dev cmake qt5-default \
-                          gcc-mingw-w64 gc++-mingw-w64 wine-development
-                          #mingw-w64 mingw-w64-tools
-  sudo apt-get autoremove -y
+                          gcc-mingw-w64 gc++-mingw-w64 wine-development \
+    || sudo apt-get autoremove -y
   x86_64-w64-mingw32-gcc --version
   x86_64-w64-mingw32-g++ --version
 fi
@@ -86,10 +84,13 @@ if [ $ARCH == "darwin" ]; then
   else
     brew update
   fi
-  DEPS="bison flex gawk libffi git mercurial graphviz \
+  DEPS="bison flex gawk libffi graphviz \
         pkg-config python3 libusb libftdi gnu-sed wget \
         llvm tcl-tk xdot cmake boost boost-python3 qt5 eigen"
   brew install --force $DEPS
+  # git and mercurial may already be installed
+  brew install --force git || true
+  brew install --force mercurial || true
   brew upgrade python
   brew link --overwrite --force $DEPS
   # Determine command paths for CI debugging

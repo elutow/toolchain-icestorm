@@ -31,9 +31,9 @@ make -j$J
 make install
 
 EXE_O=
-if [ -f $PACKAGE_DIR/$NAME/$NEXTPNR_BIN.exe ]; then
+if [ -f $PACKAGE_DIR/$NAME/bin/$NEXTPNR_BIN.exe ]; then
   EXE_O=.exe
 fi
 
 # -- Test the generated executables
-test_bin $PACKAGE_DIR/$NAME/$NEXTPNR_BIN$EXE_O
+test_bin $PACKAGE_DIR/$NAME/bin/$NEXTPNR_BIN$EXE_O
