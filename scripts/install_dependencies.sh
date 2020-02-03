@@ -19,6 +19,7 @@ if [ $ARCH == "linux_i686" ]; then
                           xdot pkg-config python3 libboost-all-dev:i386 zlib1g-dev:i386 \
                           libeigen3-dev:i386 gperf autoconf libgmp-dev:i386 cmake qt5-default \
                           gcc-multilib g++-multilib
+  sudo apt-get install -f
   sudo apt-get autoremove -y
   gcc --version
   g++ --version
@@ -31,6 +32,7 @@ if [ $ARCH == "linux_armv7l" ]; then
                           libeigen3-dev:armhf gperf autoconf libgmp-dev:armhf cmake qt5-default \
                           gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf \
                           binfmt-support qemu-user-static
+  sudo apt-get install -f
   sudo apt-get autoremove -y
   arm-linux-gnueabihf-gcc --version
   arm-linux-gnueabihf-g++ --version
@@ -43,6 +45,7 @@ if [ $ARCH == "linux_aarch64" ]; then
                           libeigen3-dev:arm64 gperf autoconf libgmp-dev:arm64 cmake qt5-default \
                           gcc-aarch64-linux-gnu g++-aarch64-linux-gnu \
                           binfmt-support qemu-user-static
+  sudo apt-get install -f
   sudo apt-get autoremove -y
   aarch64-linux-gnu-gcc --version
   aarch64-linux-gnu-g++ --version
@@ -55,6 +58,7 @@ if [ $ARCH == "windows_x86" ]; then
                           libeigen3-dev:i386 gperf autoconf libgmp-dev:i386 cmake qt5-default \
                           gcc-mingw-w64 gc++-mingw-w64 wine-development
                           #mingw-w64 mingw-w64-tools
+  sudo apt-get install -f
   sudo apt-get autoremove -y
   i686-w64-mingw32-gcc --version
   i686-w64-mingw32-g++ --version

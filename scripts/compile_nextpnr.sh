@@ -26,19 +26,14 @@ cd $BUILD_DIR/$NEXTPNR
 
 # -- Compile it
 # NOTE: We are assuming compile_icestorm.sh is already invoked
-cmake -DARCH=ice40 -DICEBOX_ROOT="$PACKAGE_DIR/$NAME/share/icebox" -DBUILD_PYTHON=OFF -DBUILD_GUI=OFF -DSTATIC_BUILD=ON $CMAKE_ARCHFLAGS .
+cmake -DARCH=ice40 -DICEBOX_ROOT="$PACKAGE_DIR/$NAME/share/icebox" -DBUILD_PYTHON=OFF -DBUILD_GUI=OFF -DSTATIC_BUILD=ON -DCMAKE_INSTALL_PREFIX="$PACKAGE_DIR/$NAME" $CMAKE_ARCHFLAGS .
 make -j$J
+make install
 
 EXE_O=
-if [ -f bin/$NEXTPNR_BIN.exe ]; then
+if [ -f $PACKAGE_DIR/$NAME/$NEXTPNR_BIN.exe ]; then
   EXE_O=.exe
 fi
 
 # -- Test the generated executables
-test_bin bin/$NEXTPNR_BIN$EXE_O
-
-# -- Copy the executable to the bin dir
-cp bin/$NEXTPNR_BIN$EXE_O $PACKAGE_DIR/$NAME/bin/$NEXTPNR_BIN$EXE
-
-# -- Copy the chipdb*.bin data files
-mkdir -p $PACKAGE_DIR/$NAME/share/$NEXTPNR
+test_bin $PACKAGE_DIR/$NAME/$NEXTPNR_BIN$EXE_O
