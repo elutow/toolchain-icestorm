@@ -24,8 +24,8 @@ cd $BUILD_DIR/$ICESTORM
 
 # -- Compile it
 if [ $ARCH == "darwin" ]; then
-  gsed -i "s/-ggdb //;" config.mk
-  sed -i "s/-ggdb //;" config.mk
+  gsed -i "s/-ggdb //;" config.mk || true
+  sed -i "s/-ggdb //;" config.mk || true
   make -j$J CC="$CC" \
             SUBDIRS="iceprog"
   make -j$J CXX="$CXX" \
@@ -56,7 +56,7 @@ done
 
 # -- Copy the executables to the bin dir
 for dir in $TOOLS; do
-  cp $dir/$dir$EXE_O $PACKAGE_DIR/$NAME/bin/$dir$EXE
+  cp $dir/$dir$EXE_O $PACKAGE_DIR/$NAME/bin/$dir$EXE_O
 done
 
 # -- Copy the chipdb*.txt data files
