@@ -35,11 +35,6 @@ if [ -f bin/$NEXTPNR_BIN.exe ]; then
 fi
 
 # -- Test the generated executables
-test -e share/$NEXTPNR/chipdb-1k.bin || exit 1
-test -e share/$NEXTPNR/chipdb-5k.bin || exit 1
-test -e share/$NEXTPNR/chipdb-8k.bin || exit 1
-test -e share/$NEXTPNR/chipdb-384.bin || exit 1
-test -e share/$NEXTPNR/chipdb-lm4k.bin || exit 1
 test_bin bin/$NEXTPNR_BIN$EXE_O
 
 # -- Copy the executable to the bin dir
@@ -47,4 +42,3 @@ cp bin/$NEXTPNR_BIN$EXE_O $PACKAGE_DIR/$NAME/bin/$NEXTPNR_BIN$EXE
 
 # -- Copy the chipdb*.bin data files
 mkdir -p $PACKAGE_DIR/$NAME/share/$NEXTPNR
-cp -r share/$NEXTPNR/chipdb*.bin $PACKAGE_DIR/$NAME/share/$NEXTPNR
