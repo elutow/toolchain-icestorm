@@ -1,5 +1,7 @@
 # Install dependencies script
 
+set -eu
+
 if [ $ARCH == "linux_x86_64" ]; then
   sudo apt-get install -y build-essential bison flex libreadline-dev \
                           gawk tcl-dev libffi-dev git mercurial graphviz \
@@ -51,7 +53,7 @@ if [ $ARCH == "windows_x86" ]; then
                           gawk tcl-dev libffi-dev git mercurial graphviz \
                           xdot pkg-config python3 libboost-all-dev zlib1g-dev \
                           libeigen3-dev gperf autoconf libgmp-dev cmake qt5-default \
-                          gcc-mingw-w64 gc++-mingw-w64 wine
+                          gcc-mingw-w64 gc++-mingw-w64 wine-development
                           #mingw-w64 mingw-w64-tools
   sudo apt-get autoremove -y
   i686-w64-mingw32-gcc --version
@@ -63,7 +65,7 @@ if [ $ARCH == "windows_amd64" ]; then
                           gawk tcl-dev libffi-dev git mercurial graphviz \
                           xdot pkg-config python3 libboost-all-dev zlib1g-dev \
                           libeigen3-dev gperf autoconf libgmp-dev cmake qt5-default \
-                          gcc-mingw-w64 gc++-mingw-w64 wine
+                          gcc-mingw-w64 gc++-mingw-w64 wine-development
                           #mingw-w64 mingw-w64-tools
   sudo apt-get autoremove -y
   x86_64-w64-mingw32-gcc --version
