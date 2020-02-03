@@ -5,7 +5,7 @@ set -eu
 if [ $ARCH == "linux_x86_64" ]; then
   sudo apt-get install -y build-essential bison flex libreadline-dev \
                           gawk tcl-dev libffi-dev git mercurial graphviz \
-                          xdot pkg-config python3 python3-dev libboost-all-dev zlib1g-dev \
+                          xdot pkg-config python3 libboost-all-dev zlib1g-dev \
                           libeigen3-dev gperf autoconf libgmp-dev cmake qt5-default \
                           gcc g++
   sudo apt-get autoremove -y
@@ -16,7 +16,7 @@ fi
 if [ $ARCH == "linux_i686" ]; then
   sudo apt-get install -y build-essential bison flex libreadline-dev:i386 \
                           gawk tcl-dev:i386 libffi-dev:i386 git mercurial graphviz \
-                          xdot pkg-config python3 python3-dev libboost-all-dev:i386 zlib1g-dev:i386 \
+                          xdot pkg-config python3 libboost-all-dev:i386 zlib1g-dev:i386 \
                           libeigen3-dev:i386 gperf autoconf libgmp-dev:i386 cmake qt5-default \
                           gcc-multilib g++-multilib \
     || sudo apt-get install -f
@@ -28,7 +28,7 @@ fi
 if [ $ARCH == "linux_armv7l" ]; then
   sudo apt-get install -y build-essential bison flex libreadline-dev:armhf \
                           gawk tcl-dev:armhf libffi-dev:armhf git mercurial graphviz \
-                          xdot pkg-config python3 python3-dev libboost-all-dev:armhf zlib1g-dev:armhf \
+                          xdot pkg-config python3 libboost-all-dev:armhf zlib1g-dev:armhf \
                           libeigen3-dev:armhf gperf autoconf libgmp-dev:armhf cmake qt5-default \
                           gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf \
                           binfmt-support qemu-user-static \
@@ -41,7 +41,7 @@ fi
 if [ $ARCH == "linux_aarch64" ]; then
   sudo apt-get install -y build-essential bison flex libreadline-dev \
                           gawk tcl-dev:arm64 libffi-dev:arm64 git mercurial graphviz \
-                          xdot pkg-config python3 python3-dev libboost-all-dev:arm64 zlib1g-dev:arm64 \
+                          xdot pkg-config python3 libboost-all-dev:arm64 zlib1g-dev:arm64 \
                           libeigen3-dev:arm64 gperf autoconf libgmp-dev:arm64 cmake qt5-default \
                           gcc-aarch64-linux-gnu g++-aarch64-linux-gnu \
                           binfmt-support qemu-user-static \
@@ -54,7 +54,7 @@ fi
 if [ $ARCH == "windows_x86" ]; then
   sudo apt-get install -y build-essential bison flex libreadline-dev \
                           gawk tcl-dev:i386 libffi-dev:i386 git mercurial graphviz \
-                          xdot pkg-config python3 python3-dev libboost-all-dev:i386 zlib1g-dev \
+                          xdot pkg-config python3 libboost-all-dev:i386 zlib1g-dev \
                           libeigen3-dev:i386 gperf autoconf libgmp-dev:i386 cmake qt5-default \
                           gcc-mingw-w64 gc++-mingw-w64 wine-development \
     || sudo apt-get install -f
@@ -66,7 +66,7 @@ fi
 if [ $ARCH == "windows_amd64" ]; then
   sudo apt-get install -y build-essential bison flex libreadline-dev \
                           gawk tcl-dev libffi-dev git mercurial graphviz \
-                          xdot pkg-config python3 python3-dev libboost-all-dev zlib1g-dev \
+                          xdot pkg-config python3 libboost-all-dev zlib1g-dev \
                           libeigen3-dev gperf autoconf libgmp-dev cmake qt5-default \
                           gcc-mingw-w64 gc++-mingw-w64 wine-development \
     || sudo apt-get autoremove -y
