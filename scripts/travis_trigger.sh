@@ -4,7 +4,7 @@
 #travis login --org
 
 echo "> travis token"
-travis token --org
+travis token
 
 echo "> Enter the token: "
 read TOKEN
@@ -25,6 +25,6 @@ curl -s -X POST \
   -H "Travis-API-Version: 3" \
   -H "Authorization: token $TOKEN" \
   -d "$body" \
-  https://api.travis-ci.org/repo/FPGAwars%2Ftoolchain-icestorm/requests
+  https://api.travis-ci.org/repo/elutow%2Ftoolchain-icestorm/requests
 
 echo "> Done!"

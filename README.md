@@ -1,10 +1,10 @@
 # Toolchain-icestorm
 
-[![Build Status](https://travis-ci.org/FPGAwars/toolchain-icestorm.svg)](https://travis-ci.org/FPGAwars/toolchain-icestorm)
+[![Build Status](https://travis-ci.org/elutow/toolchain-icestorm.svg)](https://travis-ci.org/elutow/toolchain-icestorm)
 
 ## Introduction
 
-Static binaries of the [Icestorm](http://www.clifford.at/icestorm) tools (yosys, arachne, icetools and icotools). Packaged for [Apio](https://github.com/FPGAwars/apio) and [PlatformIO](http://platformio.org/).
+Static binaries of the [Icestorm](http://www.clifford.at/icestorm) tools (yosys, nextpnr, icetools and icotools). Packaged for [Apio (forked by elutow)](https://github.com/elutow/apio).
 
 ## Usage
 

@@ -9,7 +9,7 @@ export LC_ALL=C
 # Generate toolchain-icestorm-arch-ver.tar.gz from source code
 # sources: http://www.clifford.at/icestorm/
 
-VERSION=1.11.1
+VERSION=1.12.0
 
 # -- Target architectures
 ARCH=$1
@@ -21,7 +21,7 @@ NAME=toolchain-icestorm
 # -- Debug flags
 INSTALL_DEPS=1
 COMPILE_ICESTORM=1
-COMPILE_ARACHNE=1
+COMPILE_NEXTPNR=1
 COMPILE_YOSYS=1
 COMPILE_ICOTOOLS=1
 CREATE_PACKAGE=1
@@ -110,11 +110,11 @@ if [ $COMPILE_ICESTORM == "1" ]; then
 
 fi
 
-# --------- Compile arachne-pnr ------------------------------------
-if [ $COMPILE_ARACHNE == "1" ]; then
+# --------- Compile nextpnr ------------------------------------
+if [ $COMPILE_NEXTPNR == "1" ]; then
 
-  print ">> Compile arachne-pnr"
-  . $WORK_DIR/scripts/compile_arachnepnr.sh
+  print ">> Compile nextpnr"
+  . $WORK_DIR/scripts/compile_nextpnr.sh
 
 fi
 

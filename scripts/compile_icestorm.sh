@@ -1,7 +1,7 @@
 # -- Compile Icestorm script
 
 ICESTORM=icestorm
-COMMIT=5ab07ed32a768d484284f1d0e58f61c2ef9d398a
+COMMIT=0ec00d892a91cc68e45479b46161f649caea2933
 GIT_ICESTORM=https://github.com/cliffordwolf/icestorm.git
 
 # -- Setup

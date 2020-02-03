@@ -2,11 +2,11 @@
 
 REL=1 # 1: load from release tag. 0: load from source code
 
-VER=0.8
+VER=0.9
 YOSYS=yosys-yosys-$VER
 TAR_YOSYS=yosys-$VER.tar.gz
-REL_YOSYS=https://github.com/cliffordwolf/yosys/archive/$TAR_YOSYS
-GIT_YOSYS=https://github.com/cliffordwolf/yosys.git
+REL_YOSYS=https://github.com/YosysHQ/yosys/archive/$TAR_YOSYS
+GIT_YOSYS=https://github.com/YosysHQ/yosys.git
 
 # -- Setup
 . $WORK_DIR/scripts/build_setup.sh
