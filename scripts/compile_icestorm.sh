@@ -25,7 +25,6 @@ cd $BUILD_DIR/$ICESTORM
 # -- Compile it
 if [ $ARCH == "darwin" ]; then
   gsed -i "s/-ggdb //;" config.mk || true
-  sed -i "s/-ggdb //;" config.mk || true
   make -j$J CC="$CC" \
             SUBDIRS="iceprog"
   make -j$J CXX="$CXX" \
