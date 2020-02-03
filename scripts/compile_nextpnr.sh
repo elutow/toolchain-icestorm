@@ -25,7 +25,7 @@ rsync -a $NEXTPNR $BUILD_DIR --exclude .git
 cd $BUILD_DIR/$NEXTPNR
 
 # -- Compile it
-cmake -DARCH=ice40 -DICEBOX_ROOT="../icestorm/share/icebox" -DBUILD_PYTHON=OFF -DBUILD_GUI=OFF -DSTATIC_BUILD=ON .
+cmake -DARCH=ice40 -DICEBOX_ROOT="../toolchain-icestorm/share/icebox" -DBUILD_PYTHON=OFF -DBUILD_GUI=OFF -DSTATIC_BUILD=ON .
 make -j$J
 
 EXE_O=
