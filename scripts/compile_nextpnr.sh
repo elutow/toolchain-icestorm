@@ -26,10 +26,7 @@ cd $BUILD_DIR/$NEXTPNR
 
 # -- Compile it
 # NOTE: We are assuming compile_icestorm.sh is already invoked
-ICEBOX_SHARE_ROOT=$PACKAGE_DIR/$NAME/share/icebox
-test -f $ICEBOX_SHARE_ROOT/chipdb*.txt
-test -f $ICEBOX_SHARE_ROOT/timings*.txt
-cmake -DARCH=ice40 -DICEBOX_ROOT="$ICEBOX_SHARE_ROOT" -DBUILD_PYTHON=OFF -DBUILD_GUI=OFF -DSTATIC_BUILD=ON .
+cmake -DARCH=ice40 -DICEBOX_ROOT="$PACKAGE_DIR/$NAME/share/icebox" -DBUILD_PYTHON=OFF -DBUILD_GUI=OFF -DSTATIC_BUILD=ON .
 make -j$J
 
 EXE_O=
