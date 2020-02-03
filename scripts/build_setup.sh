@@ -2,6 +2,8 @@
 
 # Set default flags
 CMAKE_ARCHFLAGS=''
+PY=''
+EXE=''
 
 if [ $ARCH == "linux_x86_64" ]; then
   CC="gcc"
