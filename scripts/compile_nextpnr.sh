@@ -26,7 +26,7 @@ cd $BUILD_DIR/$NEXTPNR
 
 # -- Compile it
 # NOTE: We are assuming compile_icestorm.sh is already invoked
-cmake -DARCH=ice40 -DICEBOX_ROOT="$PACKAGE_DIR/$NAME/share/icebox" -DBUILD_PYTHON=OFF -DBUILD_GUI=OFF -DSTATIC_BUILD=ON .
+cmake -DARCH=ice40 -DICEBOX_ROOT="$PACKAGE_DIR/$NAME/share/icebox" -DBUILD_PYTHON=OFF -DBUILD_GUI=OFF -DSTATIC_BUILD=ON $CMAKE_ARCHFLAGS .
 make -j$J
 
 EXE_O=
