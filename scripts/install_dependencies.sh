@@ -86,11 +86,9 @@ if [ $ARCH == "darwin" ]; then
   fi
   DEPS="bison flex gawk libffi graphviz \
         pkg-config python3 libusb libftdi gnu-sed wget \
-        llvm tcl-tk xdot cmake boost boost-python3 qt5 eigen"
+        xdot cmake boost eigen git mercurial"
+  # Not included to save build time: qt5, boost-python3, tcl-tk
   brew install --force $DEPS || true
-  # git and mercurial may already be installed
-  brew install --force git || true
-  brew install --force mercurial || true
   brew upgrade python
   brew link --overwrite --force $DEPS
   # Determine command paths for CI debugging
