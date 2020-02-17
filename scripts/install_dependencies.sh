@@ -87,7 +87,7 @@ if [ $ARCH == "darwin" ]; then
   DEPS="bison flex gawk libffi graphviz \
         pkg-config python3 libusb libftdi gnu-sed wget \
         llvm tcl-tk xdot cmake boost boost-python3 qt5 eigen"
-  brew install --force $DEPS
+  brew install --force $DEPS || true
   # git and mercurial may already be installed
   brew install --force git || true
   brew install --force mercurial || true
