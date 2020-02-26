@@ -1,6 +1,6 @@
 # -- Compile Yosys script
 
-REL=1 # 1: load from release tag. 0: load from source code
+REL=0 # 1: load from release tag. 0: load from source code
 
 VER=0.9
 YOSYS=yosys-yosys-$VER
@@ -24,6 +24,7 @@ else
   git -C $YOSYS pull
   echo ""
   git -C $YOSYS log -1
+  VER=$VER-dev$(git -C $YOSYS log -1 --format="%h")
 fi
 
 # -- Copy the upstream sources into the build directory
