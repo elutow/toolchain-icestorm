@@ -9,7 +9,7 @@ export LC_ALL=C
 # Generate toolchain-icestorm-arch-ver.tar.gz from source code
 # sources: http://www.clifford.at/icestorm/
 
-VERSION=1.12.5
+VERSION=1.12.6
 
 # -- Target architectures
 ARCH=$1
