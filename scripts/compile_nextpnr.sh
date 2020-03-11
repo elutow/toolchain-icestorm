@@ -5,7 +5,7 @@ set -eux
 NEXTPNR=nextpnr
 NEXTPNR_ARCH=ice40
 NEXTPNR_BIN=$NEXTPNR-$NEXTPNR_ARCH
-COMMIT=7ac173539579164eb2ba888676cf758dbc3e1cda
+COMMIT=bb7358020928d0a26ab7becd123ccdc15b0206cb
 GIT_NEXTPNR=https://github.com/YosysHQ/nextpnr.git
 
 # -- Setup
